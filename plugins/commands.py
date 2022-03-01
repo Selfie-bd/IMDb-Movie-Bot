@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('⭕️ Updates ⭕️', url='https://t.me/josprojects')
+                InlineKeyboardButton('🔰 Updates 🔰', url='https://t.me/groupdcbots')
             ],
             [
                 InlineKeyboardButton('🛠️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -45,13 +45,13 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add me to your Chat ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('⭕️ Help', callback_data='help'),
-            InlineKeyboardButton('About ⭕️', callback_data='about')
+            InlineKeyboardButton('🆘 Help 🆘', callback_data='help'),
+            InlineKeyboardButton('📝 About 📝', callback_data='about')
             ],[
-            InlineKeyboardButton('🕵️ Search here Movie 🕵️', switch_inline_query_current_chat='')
+            InlineKeyboardButton('Search Series 🔎 ', switch_inline_query_current_chat='')
             ],[
-            InlineKeyboardButton('⭕️ Updates', url='https://t.me/josprojects'),
-            InlineKeyboardButton('Movie Club ⭕️', url='https://t.me/+y53tWFUw6Q43NzE9')
+            InlineKeyboardButton('🔰 Updates 🔰', url='https://t.me/groupdcbots'),
+            InlineKeyboardButton('🛡️ Movie Club 🛡️', url='https://t.me/Umlinks')
             ],[
             InlineKeyboardButton('❌ Close the Menu ❌', callback_data='close_data')
         ]]
@@ -73,7 +73,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "🤖 Join Updates Channel To Use Me ❗", url=invite_link.invite_link
                 )
             ]
         ]
@@ -81,25 +81,26 @@ async def start(client, message):
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
             pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            btn.append([InlineKeyboardButton("🔄 Try Again 👈 Tap me 🥰", callback_data=f"{pre}#{file_id}")])
+            btn.append([InlineKeyboardButton("🔄 Try Again 👈 Tap me 👻", callback_data=f"{pre}#{file_id}")])
         await client.send_message(
             chat_id=message.from_user.id,
             text=Script.FORCESUB_TXT,
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
-        return
+     return
+
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
             InlineKeyboardButton('➕ Add me to your Chat ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('⭕️ Help', callback_data='help'),
-            InlineKeyboardButton('About ⭕️', callback_data='about')
+            InlineKeyboardButton('🆘 Help', callback_data='help'),
+            InlineKeyboardButton('About 📝', callback_data='about')
             ],[
-            InlineKeyboardButton('🕵️ Search here Movie 🕵️', switch_inline_query_current_chat='')
+            InlineKeyboardButton('Search Series🔎', switch_inline_query_current_chat='')
             ],[
-            InlineKeyboardButton('⭕️ Updates', url='https://t.me/josprojects'),
-            InlineKeyboardButton('Movie Club ⭕️', url='https://t.me/+y53tWFUw6Q43NzE9')
+            InlineKeyboardButton('🔰 Updates', url='https://t.me/groupdcbots'),
+            InlineKeyboardButton('Movie Club 🔰', url='https://t.me/Umlinks')
             ],[
             InlineKeyboardButton('❌ Close the Menu ❌', callback_data='close_data')
         ]]
@@ -146,11 +147,11 @@ async def start(client, message):
                 f_caption = f"{title}"
             buttons = [
                 [
-                    InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
-                    InlineKeyboardButton('Channel ⭕️', url='https://t.me/josprojects/221')
+                    InlineKeyboardButton('🛡️ Support', url='https://t.me/groupdc'),
+                    InlineKeyboardButton('Channel 🛡️', url='https://t.me/groupdcbots/221')
                 ],
                 [
-                    InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
+                    InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/HdFlimz')
                 ]
                 ]
             try:
@@ -179,7 +180,6 @@ async def start(client, message):
     elif data.split("-", 1)[0] == "DSTORE":
         sts = await message.reply("Please wait")
         b_string = data.split("-", 1)[1]
-        file_data = pd.read_csv(path_to_file, encoding="ascii")
         decoded = (base64.urlsafe_b64decode(b_string + "=" * (-len(b_string) % 4))).decode("ascii")
         try:
             f_msg_id, l_msg_id, f_chat_id, protect = decoded.split("_", 3)
@@ -261,11 +261,11 @@ async def start(client, message):
         f_caption = f"{files.file_name}"
     buttons = [
         [
-            InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
-            InlineKeyboardButton('Channel ⭕️', url='https://t.me/josprojects/221')
+            InlineKeyboardButton('🛡️ Support', url='https://t.me/groupdc'),
+            InlineKeyboardButton('Channel 🔰', url='https://t.me/groupdcbots/221')
         ],
         [
-            InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
+            InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/HdFlimz')
         ]
         ]
     await client.send_cached_media(
